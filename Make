@@ -1,1 +1,13 @@
-#include include
+CC = gcc
+CFLAGS = -g
+TARGET = ass1
+OBJS = simpleChain.0
+
+$(TARGET): $(OBJS)
+  $(CC) -o $(TARGET) $(OBJS)
+
+simpleChain.0: simpleChain.c
+  $(CC) $(CFLAGS) -c simpleChain.c
+
+clean:
+  /bin/rm -f *.o $(TARGET)
