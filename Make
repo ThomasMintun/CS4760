@@ -1,13 +1,14 @@
 CC = gcc
 CFLAGS = -g
 TARGET = ass1
-OBJS = simpleChain.0
+OBJS = simpleChain.o
 
+all: simpleChain
 $(TARGET): $(OBJS)
   $(CC) -o $(TARGET) $(OBJS)
 
-simpleChain.0: simpleChain.c
+simpleChain.o: simpleChain.c
   $(CC) $(CFLAGS) -c simpleChain.c
 
 clean:
-  /bin/rm -f *.o $(TARGET)
+  rm simpleChain.o
